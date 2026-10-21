@@ -1,0 +1,51 @@
+{
+  "name": "living-docs",
+  "version": "0.1.0",
+  "description": "Generate a developer guide from your TypeScript code and hand-written flows, and fail CI when they drift apart.",
+  "license": "MIT",
+  "author": "Oscar Vinueza <os.vinueza94@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akiles94/living-docs.git"
+  },
+  "homepage": "https://github.com/Akiles94/living-docs#readme",
+  "keywords": [
+    "documentation",
+    "living-docs",
+    "tsdoc",
+    "mermaid",
+    "ci",
+    "typescript"
+  ],
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "living-docs": "dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup && tsc -p tsconfig.build.json",
+    "typecheck": "tsc",
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "test": "vitest run",
+    "prepublishOnly": "npm run typecheck && npm run lint && npm run test && npm run build"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.3",
+    "@types/node": "^26.1.1",
+    "tsup": "^8.5.1",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10"
+  }
+}
