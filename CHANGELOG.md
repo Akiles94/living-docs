@@ -4,7 +4,7 @@ All notable changes to living-docs. Format: [Keep a Changelog](https://keepachan
 versions follow [SemVer](https://semver.org/). A change in rendered output is breaking for
 consumers' committed guides and is called out.
 
-## [Unreleased]
+## [0.2.0] — 2026-10-21
 
 ### Changed
 - `TypeScriptExportsExtractor` also skips `*.spec.ts(x)` and `*.stories.ts(x)` files, so React and
