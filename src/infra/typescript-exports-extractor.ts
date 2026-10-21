@@ -12,7 +12,10 @@ export interface TypeScriptExportsOptions {
   readonly repoRoot: string;
   /** Repo-relative posix directories to walk. */
   readonly roots: readonly string[];
-  /** Extra exclusions on top of tests, `.d.ts`, `__dom-tests__` and `testing/` folders. */
+  /**
+   * Extra exclusions on top of `.test`, `.spec` and `.stories` files, `.d.ts`, `__dom-tests__` and
+   * `testing/` folders.
+   */
   readonly exclude?: (path: string) => boolean;
   readonly docRequired: (path: string) => boolean;
 }
@@ -96,7 +99,7 @@ export class TypeScriptExportsExtractor implements Extractor {
         ["node_modules", "testing", "__dom-tests__"].includes(name) || this.isUserExcluded(path)
       );
     }
-    return /\.test\.tsx?$|\.d\.ts$/.test(name) || this.isUserExcluded(path);
+    return /\.(?:test|spec|stories)\.tsx?$|\.d\.ts$/.test(name) || this.isUserExcluded(path);
   }
 
   private isUserExcluded(path: string): boolean {

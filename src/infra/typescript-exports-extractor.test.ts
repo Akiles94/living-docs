@@ -23,6 +23,8 @@ describe("TypeScriptExportsExtractor", () => {
       "src/b/z.ts": "/** Zed does z. */\nexport const z = 1;\n",
       "src/a/y.ts": "export function y() {}\nexport { z } from '../b/z.js';\n",
       "src/a/y.test.ts": "export const ignored = 1;\n",
+      "src/a/y.spec.ts": "export const ignoredSpec = 1;\n",
+      "src/a/Button.stories.tsx": "export const Primary = 1;\n",
       "src/testing/fixture.ts": "export const fixture = 1;\n",
       "src/a/types.d.ts": "export type D = 1;\n",
       "src/gen/out.ts": "export const generated = 1;\n",

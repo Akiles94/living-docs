@@ -4,6 +4,14 @@ All notable changes to living-docs. Format: [Keep a Changelog](https://keepachan
 versions follow [SemVer](https://semver.org/). A change in rendered output is breaking for
 consumers' committed guides and is called out.
 
+## [0.2.0] — 2026-10-21
+
+### Changed
+- `TypeScriptExportsExtractor` also skips `*.spec.ts(x)` and `*.stories.ts(x)` files, so React and
+  Storybook projects no longer owe TSDoc on spec and story exports. **Breaking for committed
+  guides:** symbols from those files disappear from the generated reference; run `living-docs write`
+  after upgrading.
+
 ## [0.1.0] — 2026-10-21
 
 ### Added

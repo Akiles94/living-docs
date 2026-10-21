@@ -1,6 +1,6 @@
 {
   "name": "living-docs",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Generate a developer guide from your TypeScript code and hand-written flows, and fail CI when they drift apart.",
   "license": "MIT",
   "author": "Oscar Vinueza <os.vinueza94@gmail.com>",
